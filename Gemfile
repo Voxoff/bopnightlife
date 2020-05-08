@@ -22,6 +22,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'cloudinary'
   gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
