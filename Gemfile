@@ -20,8 +20,9 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
-  gem 'rspec-rails'
 group :development, :test do
+  gem 'rspec-rails'
+  gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
