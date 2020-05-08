@@ -3,4 +3,4 @@ require("@rails/activestorage").start()
 require("channels")
 
 import "bootstrap";
-import 'arctic_admin'
+// import 'arctic_admin'
