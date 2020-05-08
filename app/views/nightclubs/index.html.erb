@@ -1,0 +1,15 @@
+<%= @nightclubs.each do |nightclub| %>
+<!--   <div class="card">
+    <div class="static"></div>
+    <div class="live"></div>
+    <div class="promotions"></div>
+  </div> -->
+  <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><%= nightclub.name %></h2>
+    <p><%= nightclub.short_description %></p>
+  </div>
+</div>
+
+<% end %>

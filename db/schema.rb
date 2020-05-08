@@ -10,10 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_07_173150) do
+ActiveRecord::Schema.define(version: 2020_05_07_173559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "first_line"
+    t.string "second_line"
+    t.string "city"
+    t.string "postcode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "nightclubs", force: :cascade do |t|
+    t.string "name"
+    t.integer "total_capacity"
+    t.string "style"
+    t.string "description"
+    t.integer "cheapest_lager"
+    t.integer "cheapest_mixer"
+    t.integer "cheapest_shot"
+    t.integer "price_house_wine"
+    t.integer "capacity"
+    t.integer "queue_time"
+    t.integer "entry_price"
+    t.integer "gender_mix"
+    t.boolean "promotion_available"
+    t.bigint "address_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["address_id"], name: "index_nightclubs_on_address_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +56,5 @@ ActiveRecord::Schema.define(version: 2020_05_07_173150) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "nightclubs", "addresses"
 end
