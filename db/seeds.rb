@@ -1,4 +1,11 @@
 require 'open-uri'
+
+hamish = User.create(
+  admin: true,
+  email: 'test@test.com',
+  password: 'password'
+)
+
 pete = Nightclub.create(
   name: "Sneaky Pete's",
   description: "We welcome open minds with open ears",
