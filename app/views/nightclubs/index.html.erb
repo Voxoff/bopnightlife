@@ -1,15 +1,28 @@
-<%= @nightclubs.each do |nightclub| %>
-<!--   <div class="card">
-    <div class="static"></div>
-    <div class="live"></div>
-    <div class="promotions"></div>
-  </div> -->
-  <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2><%= nightclub.name %></h2>
-    <p><%= nightclub.short_description %></p>
+<%#= cl_image_tag("o9q0vzs4oj2oywrarbgl",
+      width: 400, height: 300, crop: :fill) %>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10" >
+      <% @nightclubs.each do |nightclub| %>
+        <div class="card-product">
+          <div class="static"></div>
+          <div class="live"></div>
+          <div class="promotions"></div>
+          <% if nightclub.photo.attached? %>
+            <%= cl_image_tag nightclub.photo.key, width: 400, height: 300, crop: :fill %>
+          <% else %>
+
+            <%= image_tag "logo.png", alt: "No image yet" %>
+          <% end %>
+        <div class="card-product-infos">
+          <h2><%= nightclub.name %></h2>
+          <p><%= nightclub.description %></p>
+        </div>
+      </div>
+
+      <% end %>
+    </div>
+    <div class="col-sm-1"></div>
   </div>
 </div>
-
-<% end %>
