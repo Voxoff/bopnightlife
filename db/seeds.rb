@@ -8,6 +8,8 @@ hamish = User.create(
 
 pete = Nightclub.create(
   name: "Sneaky Pete's",
+  capacity: 100,
+  price_house_wine: '4',
   description: "We welcome open minds with open ears",
   style: "Jazz and Dance",
   cheapest_lager: "2.50",
@@ -25,6 +27,8 @@ pete.photo.attach(io:file, filename: 'logo.png', content_type: 'image/png')
 
 bongo = Nightclub.create(
   name: "The Bongo Club",
+  capacity: 300,
+  price_house_wine: '5',
   description: "Pushing the boundaries of the Edinburgh scene since 1996",
   style: "Garage",
   cheapest_lager: "4",
@@ -40,8 +44,9 @@ bongo = Nightclub.create(
 file = URI.open("https://www.thebongoclub.co.uk/wp-content/themes/twentythirteen-bc/images/bongo/Bongo_logo_white.png")
 bongo.photo.attach(io:file, filename: 'bongo_logo.png', content_type: 'image/png')
 
-b = Nightclub.create(
+bergain = Nightclub.create(
   name: "Berghain",
+  capacity: 1500,
   description: "World capital of techno",
   style: "Austere Techno",
   cheapest_lager: "5",
@@ -55,5 +60,5 @@ b = Nightclub.create(
 )
 
 file = URI.open("https://cdn.berghain.berlin/static/berghain/og-image.b855a38944f6.jpg")
-b.photo.attach(io:file, filename: 'b_logo.png', content_type: 'image/jpg')
+bergain.photo.attach(io:file, filename: 'b_logo.png', content_type: 'image/jpg')
 
