@@ -22,7 +22,7 @@ pete = Nightclub.create(
   )
 )
 
-file = URI.open("https://lh3.googleusercontent.com/proxy/8d-vzMJxrwtO4MA4qGRMc-SA_7JKau2nM6zPXd46fF2Qh63dPpUshBccm4MoA5jnuRFjAZPWHVia2NNSPfsb7qtw8l9IMGtdihVuDGmAd4tiFpoBKvC2e3nKEQCSt6jyK-SQyw")
+file = URI.open("https://www.residentadvisor.net/images/clubs/uk-sneaky-petes.jpg")
 pete.photo.attach(io:file, filename: 'logo.png', content_type: 'image/png')
 
 bongo = Nightclub.create(
