@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'activeadmin'
 gem 'arctic_admin'
+gem 'cloudinary'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -24,7 +25,6 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'cloudinary'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
