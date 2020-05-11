@@ -41,7 +41,7 @@ bongo = Nightclub.create(
   )
 )
 
-file = URI.open("https://www.thebongoclub.co.uk/wp-content/themes/twentythirteen-bc/images/bongo/Bongo_logo_white.png")
+file = URI.open("https://dhzjvxyl79yzn.cloudfront.net/8/21228.jpg")
 bongo.photo.attach(io:file, filename: 'bongo_logo.png', content_type: 'image/png')
 
 bergain = Nightclub.create(
@@ -60,5 +60,5 @@ bergain = Nightclub.create(
 )
 
 file = URI.open("https://cdn.berghain.berlin/static/berghain/og-image.b855a38944f6.jpg")
-bergain.photo.attach(io:file, filename: 'b_logo.png', content_type: 'image/jpg')
+bergain.photo.attach(io:file, filename: 'b_logo.jpg', content_type: 'image/jpg')
 

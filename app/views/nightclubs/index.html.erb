@@ -5,22 +5,35 @@
     <div class="col-sm-1"></div>
     <div class="col-sm-10" >
       <% @nightclubs.each do |nightclub| %>
-        <div class="card-product">
-          <div class="static"></div>
-          <div class="live"></div>
-          <div class="promotions"></div>
-          <% if nightclub.photo.attached? %>
-            <%= cl_image_tag nightclub.photo.key, width: 400, height: 300, crop: :fill %>
-          <% else %>
+        <div class="nightclub-card">
+          <div class="nightclub-card-static">
+            <% if nightclub.photo.attached? %>
+              <%= cl_image_tag nightclub.photo.key, width: 120, height: 120, crop: :fill %>
+            <% else %>
 
-            <%= image_tag "logo.png", alt: "No image yet" %>
-          <% end %>
-        <div class="card-product-infos">
-          <h2><%= nightclub.name %></h2>
-          <p><%= nightclub.description %></p>
+              <%= image_tag "logo.png", alt: "No image yet" %>
+            <% end %>
+            <div class="nightclub-card-static-info">
+              <h2><%= nightclub.name %></h2>
+              <p><%= nightclub.description %></p>
+            </div>
+          </div>
+          <div class="nightclub-card-live">
+            <div class="live">
+              <p>Queue time: <%= nightclub.queue_time_string %></p>
+              <p>Gender Mix: <%= nightclub.gender_mix_string %></p>
+              <div class="livenow">
+                <div class="live-indicator">
+                  <p id="live">Live</p>
+                </div>
+              </div>
+            </div>
+            <div class="promotions">
+              <h2>Promotions</h2>
+              <p><%= nightclub.promotion_available? %></p>
+            </div>
+          </div>
         </div>
-      </div>
-
       <% end %>
     </div>
     <div class="col-sm-1"></div>

@@ -5,11 +5,16 @@ class Nightclub < ApplicationRecord
 
   validates_uniqueness_of :name
 
-  def gender_mix
-    # calculated or given by number
+  def gender_mix_string
+    self.gender_mix || "??"
   end
 
-  def last_updated
-    (Time.now - self.updated_at).strftime("%h ")
+  def queue_time_string
+    queue_time ? queue_time.to_s + " mins" : "We're getting there"
+  end
+
+  def promotion_available?
+    bool = super
+    bool ? "Yup" : "Nothing right now"
   end
 end

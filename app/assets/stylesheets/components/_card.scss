@@ -1,33 +1,58 @@
-.card-product {
+.nightclub-card {
   overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 30px;
+
+}
+
+.nightclub-card-static {
   height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
-  margin: 30px;
   align-items: center;
+  border-bottom: 1px dashed green;
+
+  img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
 }
 
-.card-product img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
-
-.card-product .card-product-infos {
+.nightclub-card-static .nightclub-card-static-info {
   padding: 16px;
 }
+
+.nightclub-card-live {
+  padding: 16px;
+  height: 120px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.live {
+  position:relative;
+}
+
+
