@@ -2,7 +2,6 @@ class CreateNightclubs < ActiveRecord::Migration[6.0]
   def change
     create_table :nightclubs do |t|
       t.string :name
-      t.integer :total_capacity
       t.string :style
       t.string :description
       t.integer :cheapest_lager

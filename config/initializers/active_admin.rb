@@ -122,25 +122,8 @@ ActiveAdmin.setup do |config|
   # Default:
   # config.root_to = 'dashboard#index'
 
-  # == Admin Comments
-  #
-  # This allows your users to comment on any resource registered with Active Admin.
-  #
-  # You can completely disable comments:
-  # config.comments = false
-  #
-  # You can change the name under which comments are registered:
-  # config.comments_registration_name = 'AdminComment'
-  #
-  # You can change the order for the comments and you can change the column
-  # to be used for ordering:
-  # config.comments_order = 'created_at ASC'
-  #
-  # You can disable the menu item for the comments index page:
-  # config.comments_menu = false
-  #
-  # You can customize the comment menu:
-  # config.comments_menu = { parent: 'Admin', priority: 1 }
+
+  config.comments = false
 
   # == Batch Actions
   #
@@ -335,4 +318,8 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   # config.use_webpacker = true
+end
+
+module ActiveAdmin::ViewHelpers
+  include ActionView::Helpers::DateHelper
 end

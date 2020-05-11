@@ -8,4 +8,8 @@ class Nightclub < ApplicationRecord
   def gender_mix
     # calculated or given by number
   end
+
+  def last_updated
+    (Time.now - self.updated_at).strftime("%h ")
+  end
 end

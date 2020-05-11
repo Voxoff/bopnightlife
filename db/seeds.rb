@@ -22,8 +22,8 @@ pete = Nightclub.create(
   )
 )
 
-file = URI.open("https://www.residentadvisor.net/images/clubs/uk-sneaky-petes.jpg")
-pete.photo.attach(io:file, filename: 'logo.png', content_type: 'image/png')
+file = File.open("#{Rails.root.join('app', 'assets', 'images', 'sneaky_pete.png')}")
+pete.photo.attach(io:file, filename: 'sneakylogo.png', content_type: 'image/png')
 
 bongo = Nightclub.create(
   name: "The Bongo Club",

@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(version: 2020_05_08_102124) do
 
   create_table "nightclubs", force: :cascade do |t|
     t.string "name"
-    t.integer "total_capacity"
     t.string "style"
     t.string "description"
     t.integer "cheapest_lager"
