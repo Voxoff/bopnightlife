@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   resources :promotions, only: :show
 
-  post "/subscribe", to: "pages#subscribe"
+  get "/subscribe", to: "pages#subscribe"
 end

@@ -1,14 +1,13 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!
 
   def home
   end
 
   def subscribe
-    binding.pry
     if email =~ Devise.email_regexp
       flash[:notice] = "Thank you for subscribing"
-      User.create(email: email_params)
+      User.create!(email: email)
     else
       flash[:notice] = "The email is invalid"
     end
@@ -17,7 +16,7 @@ class PagesController < ApplicationController
 
   private
 
-  def email_params
-    params.permit(:email)
+  def email
+    params.require(:user).permit(:email)[:email]
   end
 end

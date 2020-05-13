@@ -2,7 +2,39 @@ footer {
   background-color: $green;
 }
 
+.mailing-form {
+  border-radius: 4px 0px 0px 4px;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.1);
+  border: none;
+  padding: 8px 20px;
+}
 
 .mailing-btn {
-  // background: linear-gradient(to right, $green, #56be8480);
+  color: #4EAD5B;
+  border: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 0px 4px 4px 0px;
+
+  &:hover, :active, :focus {
+    background-color: #f0f0f0ee;
+  }
+}
+
+.footer-link {
+  color: white;
+  opacity: .8;
+  transition: all 0.3s;
+}
+
+.footer-link:hover {
+  opacity: 1;
+  color: white;
+}
+
+.copyright{
+  p {
+    color:white;
+    opacity:0.6;
+  }
 }

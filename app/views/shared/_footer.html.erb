@@ -1,23 +1,28 @@
-<footer class="d-flex">
-  <div class="links">
-      <div class="footer-links-list-2 d-md-flex justify-content-center mb-0">
-        <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link footer-link m-2" do %>
-          <%= icon "fab", "facebook-square", class: "fa-3x" %>
-            <!-- <i class="fab fa-facebook-square fa-3x"></i></p> -->
-        <% end %>
-        <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link footer-link m-2" do %>
-          <p class="footer-link"><i class="fab fa-instagram fa-3x"></i></p>
-        <% end %>
-        <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link footer-link m-2" do %>
-          <p class="footer-link"><i class="fab fa-twitter-square fa-3x"></i></p>
-        <% end %>
-        <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link footer-link m-2" do %>
-          <p class="footer-link"><i class="fab fa-linkedin fa-3x"></i></p>
-        <% end %>
-      <div>
+<footer class="d-flex flex-column">
+  <div class="form d-flex justify-content-center">
+    <%= form_with(url: subscribe_path, method: :get) do  %>
+    <!-- Very strange whitespace bug -->
+    <div class="d-flex pt-5 pb-3">
+      <%= email_field(:user, :email, class: "mailing-form", placeholder: "Keep up to date...") %>
+      <%= submit_tag("Subscribe", class: " mailing-btn") %>
+      </div>
+    <% end %>
   </div>
-  <%= form_with(url: subscribe_path, method: :get) do  %>
-    <%= email_field(:user, :email, class: "mailing-form") %>
-    <%= submit_tag("Subscribe", class: "btn btn-md btn-primary mailing-btn", placeholder: "Keep up to date...") %>
-  <% end %>
+  <div class="footer-links-list d-flex justify-content-center mb-0">
+    <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link footer-link m-2" do %>
+        <i class="fab fa-facebook-square fa-3x"></i>
+    <% end %>
+    <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link footer-link m-2" do %>
+      <i class="fab fa-instagram fa-3x"></i>
+    <% end %>
+    <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link footer-link m-2" do %>
+      <i class="fab fa-twitter-square fa-3x"></i>
+    <% end %>
+    <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link footer-link m-2" do %>
+      <i class="fab fa-linkedin fa-3x"></i>
+    <% end %>
+  </div>
+  <div class="copyright">
+    <p class="text-center pt-2">© BopNightLife 2020 All Rights Reserved.</p>
+  </div>
 </footer>
