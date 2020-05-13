@@ -33,7 +33,7 @@ ActiveAdmin.register Nightclub do
       f.input :price_house_wine
     end
     f.inputs "Photo", :multipart => true do
-      f.input :photo, :as => :file, :hint => cl_image_tag(f.object.photo.key, width: "100", height: "100"), label: 'Photo (forced into 100x100)'
+      f.input :photo, :as => :file, :hint => cl_image_tag(f.object.photo.key, width: "100", height: "100"), label: 'Photo (forced into 100x100). Current image:'
     end
     f.actions
   end

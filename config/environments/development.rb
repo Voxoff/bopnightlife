@@ -1,6 +1,4 @@
 Rails.application.configure do
-  # bug fix for
-
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
 
   config.active_storage.service = :cloudinary

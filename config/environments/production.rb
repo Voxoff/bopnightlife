@@ -1,4 +1,5 @@
 Rails.application.configure do
+  # fixes sassc segmentation fault https://github.com/sass/sassc-ruby/issues/197
   config.assets.configure do |env|
     env.export_concurrent = false
   end
