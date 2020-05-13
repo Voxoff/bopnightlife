@@ -1,0 +1,42 @@
+<div class="nightclub-card">
+  <div class="nightclub-card-static">
+    <% if nightclub.photo.attached? %>
+      <%= cl_image_tag nightclub.photo.key, width: 150, height: 150, crop: :fill %>
+    <% else %>
+      <%= image_tag "logo.png", alt: "No image yet" %>
+    <% end %>
+    <div class="nightclub-card-static-info">
+      <div>
+        <h2><%= nightclub.name %></h2>
+        <p><%= nightclub.description %></p>
+        <p id="style"><%= "#{nightclub.style}" %></p>
+        <p><%= "Cheapest Lager: £#{nightclub.cheapest_lager} "%></p>
+        <p><%= "Cheapest Shot:  £#{nightclub.cheapest_shot} "%></p>
+        <p><%= "Cheapest Mixer: £#{nightclub.cheapest_mixer} "%></p>
+        <p><%= "Address: #{nightclub.present_address}" %></p>
+      </div>
+    </div>
+  </div>
+  <div class="nightclub-card-live">
+    <div class="live">
+      <p>Queue time: <%= nightclub.queue_time_string %></p>
+      <p>Gender Mix: <%= nightclub.gender_mix_string %></p>
+      <% if nightclub.recently_updated? || nightclub.name == "Berghain" %>
+        <div class="live-indicator-and-text">
+          <div class="live-indicator">
+          </div>
+          <p>Just In</p>
+        </div>
+      <% end %>
+    </div>
+    <div class="promotions">
+      <% if nightclub.promotions %>
+        <% nightclub.promotions.active.each do |promotion| %>
+          <%= link_to promotion_path(promotion), class: "btn btn-md btn-primary" do %>
+            <%= promotion.description %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

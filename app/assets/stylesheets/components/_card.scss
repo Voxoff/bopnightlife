@@ -5,14 +5,13 @@
 }
 
 .nightclub-card-static {
-  height: 150px;
+  height: 180px;
   background: white;
   display: flex;
   align-items: center;
   border-bottom: 1px dashed green;
   img {
     padding-left: 8px;
-    height: 100%;
     width: 120px;
     object-fit: cover;
   }
@@ -40,10 +39,7 @@
   flex-grow: 1; // So .nightclub-card-static-info takes up space in .nightclub-card-static
   display: flex;
   justify-content: space-between;
-}
-
-.static-info-2{
-  padding-right: 10px;
+  position:relative;
 }
 
 .nightclub-card-live {
@@ -91,9 +87,20 @@
 
 
 @media screen and (max-width: 992px) {
+  .nightclub-card-static img {
+    width: 100px;
+    height:100px;
+  }
   .nightclub-card-static {
-    height: 200px;
+    height: 250px;
+  }
+}
 
+@media screen and (min-width: 992px) {
+  .nightclub-card-static-info #style {
+    position:absolute;
+    top: 6px;
+    right:10px;
   }
 }
 

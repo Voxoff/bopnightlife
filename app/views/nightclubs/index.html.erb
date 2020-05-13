@@ -1,52 +1,9 @@
-<%#= cl_image_tag("o9q0vzs4oj2oywrarbgl",
-      width: 400, height: 300, crop: :fill) %>
 <div class="container mt-5">
   <div class="row">
     <div class="col-sm-1"></div>
     <div class="col-sm-10" >
       <% @nightclubs.each do |nightclub| %>
-        <div class="nightclub-card">
-          <div class="nightclub-card-static">
-            <% if nightclub.photo.attached? %>
-              <%= cl_image_tag nightclub.photo.key, width: 150, height: 150, crop: :fill %>
-            <% else %>
-              <%= image_tag "logo.png", alt: "No image yet" %>
-            <% end %>
-            <div class="nightclub-card-static-info">
-              <div class="static-info-1">
-                <h2><%= nightclub.name %></h2>
-                <p><%= nightclub.description %></p>
-                <p><%= "Cheapest Lager: #{nightclub.cheapest_lager} "%></p>
-                <p><%= "Cheapest Shot:  #{nightclub.cheapest_shot} "%></p>
-                <p><%= "Cheapest Mixer: #{nightclub.cheapest_mixer} "%></p>
-              </div>
-              <!-- <div class="static-info-2">
-              </div> -->
-            </div>
-          </div>
-          <div class="nightclub-card-live">
-            <div class="live">
-              <p>Queue time: <%= nightclub.queue_time_string %></p>
-              <p>Gender Mix: <%= nightclub.gender_mix_string %></p>
-              <div class="live-indicator-and-text">
-                <div class="live-indicator">
-                </div>
-                <p>Live</p>
-              </div>
-            </div>
-            <div class="promotions">
-              <% if nightclub.promotions %>
-                <% nightclub.promotions.active.each do |promotion| %>
-                  <%= link_to promotion_path(promotion), class: "btn btn-md btn-primary" do %>
-                    <!-- <div class=""> -->
-                      <%= promotion.description %>
-                    <!-- </div> -->
-                  <% end %>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
+        <%= render "nightclub_card", nightclub: nightclub %>
       <% end %>
     </div>
     <div class="col-sm-1"></div>
