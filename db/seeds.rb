@@ -1,4 +1,6 @@
-require 'open-uri'
+User.destroy_all
+Promotion.destroy_all
+Nightclub.destroy_all
 
 hamish = User.create(
   admin: true,
