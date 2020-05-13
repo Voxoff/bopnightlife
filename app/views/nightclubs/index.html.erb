@@ -10,7 +10,6 @@
             <% if nightclub.photo.attached? %>
               <%= cl_image_tag nightclub.photo.key, width: 120, height: 120, crop: :fill %>
             <% else %>
-
               <%= image_tag "logo.png", alt: "No image yet" %>
             <% end %>
             <div class="nightclub-card-static-info">
@@ -29,8 +28,15 @@
               </div>
             </div>
             <div class="promotions">
-              <h2>Promotions</h2>
-              <p><%= nightclub.promotion_available? %></p>
+              <% if nightclub.promotions %>
+                <% nightclub.promotions.active.each do |promotion| %>
+                  <%= link_to promotion_path(promotion), class: "btn btn-md btn-primary" do %>
+                    <!-- <div class=""> -->
+                      <%= promotion.description %>
+                    <!-- </div> -->
+                  <% end %>
+                <% end %>
+              <% end %>
             </div>
           </div>
         </div>

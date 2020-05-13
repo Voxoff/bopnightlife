@@ -41,7 +41,7 @@ bongo = Nightclub.create(
   )
 )
 
-file = URI.open("https://dhzjvxyl79yzn.cloudfront.net/8/21228.jpg")
+file = File.open("#{Rails.root.join('app', 'assets', 'images', 'bongo.jpg')}")
 bongo.photo.attach(io:file, filename: 'bongo_logo.png', content_type: 'image/png')
 
 bergain = Nightclub.create(
@@ -59,6 +59,36 @@ bergain = Nightclub.create(
   )
 )
 
-file = URI.open("https://cdn.berghain.berlin/static/berghain/og-image.b855a38944f6.jpg")
+file = File.open("#{Rails.root.join('app', 'assets', 'images', 'berghain.png')}")
 bergain.photo.attach(io:file, filename: 'b_logo.jpg', content_type: 'image/jpg')
+
+Promotion.create(
+  code: "BERG",
+  active: true,
+  nightclub: Nightclub.first,
+  description: "£3 off entry"
+)
+
+Promotion.create(
+  code: "FREE",
+  active: true,
+  nightclub: Nightclub.second,
+  description: "Free entry"
+)
+
+Promotion.create(
+  code: "VKx2",
+  active: true,
+  nightclub: Nightclub.second,
+  description: "Free VK"
+)
+
+Promotion.create(
+  code: "EXP",
+  active: false,
+  nightclub: Nightclub.second,
+  description: "expired"
+)
+
+
 

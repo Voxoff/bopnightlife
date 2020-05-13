@@ -1,1 +1,5 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# Follow up
+
+How gendix mix is calculated?
+
+Do they have a mailing list - I'll store emails in the DB unused for now?

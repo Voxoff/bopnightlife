@@ -2,7 +2,6 @@
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 30px;
-
 }
 
 .nightclub-card-static {
@@ -53,6 +52,31 @@
 
 .live {
   position:relative;
+}
+
+.promotions {
+  display:flex;
+  flex-direction: column;
+
+  .btn {
+    margin: 2px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nightclub-card-live{
+    flex-direction:column;
+    height: 100%;
+  }
+
+  .live-indicator-and-text {
+    // TODO: remove important
+    right: -5px !important;
+  }
+
+  .promotions {
+    margin-top: 30px;
+  }
 }
 
 
