@@ -7,11 +7,10 @@ class PagesController < ApplicationController
   def subscribe
     if email =~ Devise.email_regexp
       flash[:notice] = "Thank you for subscribing"
-      User.create!(email: email)
+      Email.create!(email: email, opt_out: false)
     else
-      flash[:notice] = "The email is invalid"
+      flash[:notice] = "The email seems to be invalid"
     end
-
   end
 
   private
