@@ -8,13 +8,20 @@
         <div class="nightclub-card">
           <div class="nightclub-card-static">
             <% if nightclub.photo.attached? %>
-              <%= cl_image_tag nightclub.photo.key, width: 120, height: 120, crop: :fill %>
+              <%= cl_image_tag nightclub.photo.key, width: 150, height: 150, crop: :fill %>
             <% else %>
               <%= image_tag "logo.png", alt: "No image yet" %>
             <% end %>
             <div class="nightclub-card-static-info">
-              <h2><%= nightclub.name %></h2>
-              <p><%= nightclub.description %></p>
+              <div class="static-info-1">
+                <h2><%= nightclub.name %></h2>
+                <p><%= nightclub.description %></p>
+                <p><%= "Cheapest Lager: #{nightclub.cheapest_lager} "%></p>
+                <p><%= "Cheapest Shot:  #{nightclub.cheapest_shot} "%></p>
+                <p><%= "Cheapest Mixer: #{nightclub.cheapest_mixer} "%></p>
+              </div>
+              <!-- <div class="static-info-2">
+              </div> -->
             </div>
           </div>
           <div class="nightclub-card-live">
