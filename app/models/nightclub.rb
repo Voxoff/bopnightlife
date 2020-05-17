@@ -18,6 +18,6 @@ class Nightclub < ApplicationRecord
   end
 
   def present_address
-    "#{address.first_line}, #{address.city}"
+    "#{address.first_line}, #{address.postcode}"
   end
 end

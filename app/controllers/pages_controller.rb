@@ -5,7 +5,6 @@ class PagesController < ApplicationController
   end
 
   def subscribe
-    # binding.pry
     if email =~ Devise.email_regexp
       flash[:notice] = "Thank you for subscribing"
       Email.create!(email: email, opt_out: false)

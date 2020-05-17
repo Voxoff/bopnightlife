@@ -1,0 +1,47 @@
+Hey Ollie and Hamish,
+
+Thanks for the feedback - this is great. And thank you for following up Ollie, makes more sense now.
+
+For codes and data analytics, I think it's easiest to hop on a call and walk you through it.
+
+Email Footer.
+Yep, MailChimp is a solid choice. It's got a decent free plan to get you up and running and it's quick to setup. I can always switch to SendGrid if things get more complicated later.
+
+Design
+
+Yes, the style needs a bit of work - I'll get back to you! I'll round those corners. And change the live icon. Perhaps after another day/half day when everything is finishing, we can hop on a call and can play around with the design live over a call?
+
+Can you give me an example of a listing scroller? Even if it's a bit different. I think I get it but just to be sure.
+
+I haven't put the font in yet - It says Barlow Medium 500 on the docs. Do you think that might change? You won't be able to put the font in, but I can do it whenver you need without charging - it's just a few lines that change. (The same goes for the logo)
+
+
+
+
+
+
+
+
+I've done some work on GDPR before but you know you may want to do your own research!
+
+Under GDPR, there are 6 'lawful bases' for processing personal data (https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/lawful-basis-for-processing/). The relevant ones for us are consent and legitimate interest. Getting consent would be a pain for such a simple site. Personalisation (i.e. recommendations) to improve UX is common here, and I think we'd fall under this.
+
+
+Code generated
+
+
+Thanks for the clarity Ollie, that helps. I think I misunderstood that the code was unique for each promotion rather than unique for every user for every promotion.
+
+
+All codes are timestamped at creation, and that will be in the admin panel.
+
+The simplest way to make the code unique is to generate a new code for every new time that page is hit. Here, a user hitting the same promotion twice would get a *different* code. But this is going to make analytics very flawed.
+
+
+I can also store the (anonymised) IP addresses and associate it to a generated code. The only thing to be aware of is GDPR (I can walk you through this in more detail if you would like.)
+
+
+
+Data analytics
+Sure, lets use GA. (I'm also going to setup New Reclic which will provide data analytics focused more on the tech/response times etc. I can walk you through it once it's up - it's very neat.) Both will give you the number of page hits, bounce rate, regions etc. The easiest way to learn it is just to play around with it once it's set up.
+
