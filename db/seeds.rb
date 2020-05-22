@@ -65,28 +65,24 @@ file = File.open("#{Rails.root.join('app', 'assets', 'images', 'berghain.png')}"
 bergain.photo.attach(io:file, filename: 'b_logo.jpg', content_type: 'image/jpg')
 
 Promotion.create(
-  code: "BERG",
   active: true,
   nightclub: Nightclub.first,
   description: "£3 off entry"
 )
 
 Promotion.create(
-  code: "FREE",
   active: true,
   nightclub: Nightclub.second,
   description: "Free entry"
 )
 
 Promotion.create(
-  code: "VKx2",
   active: true,
   nightclub: Nightclub.second,
   description: "Free VK"
 )
 
 Promotion.create(
-  code: "EXP",
   active: false,
   nightclub: Nightclub.second,
   description: "expired"

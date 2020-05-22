@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_13_121704) do
+ActiveRecord::Schema.define(version: 2020_05_17_115142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 2020_05_13_121704) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "codes", force: :cascade do |t|
+    t.bigint "promotion_id", null: false
+    t.string "code"
+    t.integer "ip_address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["promotion_id"], name: "index_codes_on_promotion_id"
+  end
+
   create_table "emails", force: :cascade do |t|
     t.string "email"
     t.boolean "opt_out"
@@ -88,7 +97,6 @@ ActiveRecord::Schema.define(version: 2020_05_13_121704) do
   create_table "promotions", force: :cascade do |t|
     t.bigint "nightclub_id", null: false
     t.boolean "active", default: false
-    t.string "code"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -109,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_05_13_121704) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "codes", "promotions"
   add_foreign_key "nightclubs", "addresses"
   add_foreign_key "promotions", "nightclubs"
 end
