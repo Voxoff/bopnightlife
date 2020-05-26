@@ -9,7 +9,7 @@
   background: white;
   display: flex;
   align-items: center;
-  border-bottom: 1px dashed green;
+  position: relative; // for partial border
   img {
     padding-left: 8px;
     width: 120px;
@@ -67,6 +67,14 @@
   .btn {
     margin: 2px;
   }
+}
+
+.partial-border {
+  position: absolute;
+  border: 1px $primary solid;
+  left: 20%;
+  width: 60%;
+  bottom: 0%;
 }
 
 @media screen and (max-width: 768px) {
