@@ -27,8 +27,6 @@ class PagesController < ApplicationController
       else
         flash[:error] = "#{error.title}"
       end
-    ensure
-      redirect_back(fallback_location: root_path)
     end
   end
 
