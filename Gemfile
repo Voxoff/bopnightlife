@@ -15,11 +15,15 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
 gem 'activeadmin'
 gem 'arctic_admin'
 gem 'cloudinary'
 gem 'gibbon'
+
+# Heroku
 gem "sentry-raven"
+gem 'newrelic_rpm'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
