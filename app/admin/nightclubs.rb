@@ -1,6 +1,7 @@
 ActiveAdmin.register Nightclub do
   permit_params :name, :total_capacity, :style, :description, :cheapest_lager, :cheapest_mixer, :cheapest_shot, :price_house_wine, :capacity, :queue_time, :entry_price, :gender_mix, :promotion_available, :photo
 
+  includes(:address, photo_attachment: :blob)
   # index do
   #    selectable_column
   #   id_column
