@@ -1,4 +1,4 @@
-<div class="nightclub-card">
+<div class="nightclub-card" id=<%= nightclub.name_as_html_id %>>
   <div class="nightclub-card-static">
     <% if nightclub.photo.attached? %>
       <%= cl_image_tag nightclub.photo.key, width: 150, height: 150, crop: :fill %>

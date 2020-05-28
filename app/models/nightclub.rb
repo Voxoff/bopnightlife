@@ -20,4 +20,8 @@ class Nightclub < ApplicationRecord
   def present_address
     "#{address.first_line}, #{address.postcode}"
   end
+
+  def name_as_html_id
+    name.gsub(" ", "-")
+  end
 end
