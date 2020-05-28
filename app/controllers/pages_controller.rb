@@ -1,9 +1,6 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!
 
-  def home
-  end
-
   def subscribe
     unless email =~ Devise.email_regexp
       return flash[:notice] = "The email seems to be invalid"
