@@ -3,7 +3,7 @@ def authenticate_admin!
 end
 
 ActiveAdmin.setup do |config|
-  config.site_title = "Bopnightlife"
+  config.site_title = "Bop Nightlife"
 
   meta_tags_options = { viewport: 'width=device-width, initial-scale=1' }
   config.meta_tags = meta_tags_options
