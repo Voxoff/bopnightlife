@@ -10,6 +10,7 @@
   background: white;
   display: flex;
   align-items: center;
+  // flex-direction: column;
   position: relative; // for partial border
   img {
     padding-left: 8px;
@@ -90,7 +91,7 @@
   }
 
   .promotions {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 }
 
@@ -100,7 +101,12 @@
     height:100px;
   }
   .nightclub-card-static {
-    height: 250px;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .nightclub-card-static-info {
+    align-items: inherit;
   }
 }
 
