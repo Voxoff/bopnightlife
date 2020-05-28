@@ -19,6 +19,7 @@ gem 'activeadmin'
 gem 'arctic_admin'
 gem 'cloudinary'
 gem 'gibbon'
+gem "sentry-raven"
 
 group :development do
   gem 'web-console', '>= 3.3.0'
