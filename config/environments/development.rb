@@ -6,10 +6,7 @@ Rails.application.configure do
 
   config.after_initialize do
     Bullet.enable = true
-    # Bullet.sentry = true
-    # Bullet.bullet_logger = true
     Bullet.rails_logger = true
-    # Bullet.add_footer = true
     Bullet.skip_html_injection = false
   end
 

@@ -1,7 +1,7 @@
 <div class="nightclub-card" id=<%= nightclub.name_as_html_id %>>
   <div class="nightclub-card-static">
     <% if nightclub.photo.attached? %>
-      <%= cl_image_tag nightclub.photo.key, width: 150, height: 150, crop: :fill %>
+      <%= cl_image_tag nightclub.photo.key, width: 120, height: 120, crop: :fill %>
     <% else %>
       <%= image_tag "logo.png", alt: "No image yet" %>
     <% end %>
@@ -30,12 +30,14 @@
       <% end %>
     </div>
     <div class="promotions">
-      <% if nightclub.promotions %>
+      <% if nightclub.promotions.active.any? %>
         <% nightclub.promotions.active.each do |promotion| %>
           <%= link_to promotion_path(promotion), class: "btn btn-md btn-primary" do %>
             <%= promotion.description %>
           <% end %>
         <% end %>
+      <% else %>
+        <p style="font-style: italic; font-weight: lighter;">No promos yet</p>
       <% end %>
     </div>
   </div>

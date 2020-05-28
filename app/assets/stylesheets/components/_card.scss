@@ -1,6 +1,6 @@
 .nightclub-card {
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 3px rgba(86, 190, 132, 0.7);
   margin: 30px;
   border-radius: 20px;
 }
@@ -12,8 +12,8 @@
   align-items: center;
   position: relative; // for partial border
   img {
-    padding-left: 8px;
-    width: 120px;
+    padding-left: 25px;
+    width: 145px;
     object-fit: cover;
   }
 
@@ -29,6 +29,7 @@
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
+    // text-align: center;
   }
 }
 
@@ -37,7 +38,7 @@
 }
 
 .nightclub-card-static-info {
-  padding-left: 24px;
+  padding-left: 20px !important;
   flex-grow: 1; // So .nightclub-card-static-info takes up space in .nightclub-card-static
   display: flex;
   justify-content: space-between;
@@ -74,9 +75,9 @@
 .partial-border {
   position: absolute;
   border: 1px $primary solid;
-  left: 24%;
-  width: 52%;
-  bottom: 0%;
+  left: 15%;
+  width: 70%;
+  bottom: -2%;
 }
 
 // Media Queries
@@ -101,10 +102,15 @@
   .nightclub-card-static img {
     width: 100px;
     height:100px;
+    padding: 0px;
   }
   .nightclub-card-static {
     height: 100%;
     flex-direction: column;
+  }
+
+  .nightclub-card p {
+    text-align: center;
   }
 
   .nightclub-card-static-info {
