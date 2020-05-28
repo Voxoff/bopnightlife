@@ -15,7 +15,7 @@ ActiveAdmin.register_page "Dashboard" do
 
       column do
         panel "Useful links" do
-            link_to "BopNightLife", root_path
+            link_to "BopNightlife", root_path
         end
       end
     end
