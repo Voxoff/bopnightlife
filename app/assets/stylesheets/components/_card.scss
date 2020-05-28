@@ -10,7 +10,6 @@
   background: white;
   display: flex;
   align-items: center;
-  // flex-direction: column;
   position: relative; // for partial border
   img {
     padding-left: 8px;
@@ -80,6 +79,8 @@
   bottom: 0%;
 }
 
+// Media Queries
+// xs and sm
 @media screen and (max-width: 768px) {
   .nightclub-card-live{
     flex-direction:column;
@@ -87,7 +88,6 @@
   }
 
   .live-indicator-and-text {
-    // TODO: remove important
     right: -5px !important;
   }
 
@@ -96,6 +96,7 @@
   }
 }
 
+// xs, sm & md
 @media screen and (max-width: 992px) {
   .nightclub-card-static img {
     width: 100px;
@@ -111,11 +112,12 @@
   }
 }
 
+// Over 992 i.e. > lg
 @media screen and (min-width: 992px) {
   .nightclub-card-static-info #style {
     position:absolute;
     top: 6px;
-    right:10px;
+    right:20px;
   }
 }
 
