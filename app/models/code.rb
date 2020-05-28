@@ -8,4 +8,8 @@ class Code < ApplicationRecord
     code = id.to_s + ('A'..'Z').to_a.shuffle[0,3].join
     update(code: code)
   end
+
+  def activate
+    update(activated: true)
+  end
 end
