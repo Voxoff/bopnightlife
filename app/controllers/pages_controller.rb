@@ -28,6 +28,9 @@ class PagesController < ApplicationController
         flash[:error] = "#{error.title}"
       end
     end
+    # This renders subscribe.js.erb which calls _flash.html.erb.
+    # This is temporarily necessary while Rails get their act together re turbolinks
+    # Note an empty flash div in _flashes.html.erb to accomodate
   end
 
   private
