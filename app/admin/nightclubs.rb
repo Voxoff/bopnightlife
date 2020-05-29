@@ -7,7 +7,7 @@ ActiveAdmin.register Nightclub do
   #   id_column
   # end
 
-  batch_action :change_queue_time, form: {
+  batch_action "Change Queue Times For", form: {
     queue_time: :text
   } do |ids, input|
     batch_action_collection.find(ids).each do |nightclub|

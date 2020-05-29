@@ -5,7 +5,7 @@ ActiveAdmin.register Code do
 
   filter :code, as: :string
 
-  batch_action :activate_code do |ids|
+  batch_action "Activate Code For" do |ids|
     batch_action_collection.find(ids).each do |promo|
       promo.activate
     end
