@@ -28,3 +28,7 @@
   }
 }
 
+// Monkey patch for batch action style
+.batch_actions_selector .dropdown_menu_list_wrapper .dropdown_menu_list li {
+  padding: 10px;
+}
