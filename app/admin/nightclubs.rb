@@ -7,6 +7,16 @@ ActiveAdmin.register Nightclub do
   #   id_column
   # end
 
+  batch_action :change_queue_time, form: {
+    queue_time: :text
+  } do |ids, input|
+    batch_action_collection.find(ids).each do |nightclub|
+      # binding.pry
+      nightclub.update(queue_time: input["queue_time"])
+    end
+    redirect_to collection_path, notice: "The queue_time has been changed to #{input["queue_time"]}."
+  end
+
   menu priority: 1
 
   form do |f|

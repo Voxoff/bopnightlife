@@ -21,7 +21,7 @@
     <div class="live">
       <p>Queue time: <%= nightclub.queue_time_string %></p>
       <p>Gender Mix: <%= nightclub.gender_mix_string %></p>
-      <% if nightclub.recently_updated? || nightclub.name == "Berghain" %>
+      <% if nightclub.recently_updated? %>
         <div class="live-indicator-and-text">
           <div class="live-indicator">
           </div>
