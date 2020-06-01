@@ -20,10 +20,11 @@ ActiveAdmin.register Nightclub do
       f.input :queue_time
       f.input :entry_price
       f.input :gender_mix
-      f.input :promotion_available
     end
     f.inputs :address
     f.inputs "Static" do
+      f.input :name
+      f.input :style
       f.input :capacity
       f.input :description
       f.input :cheapest_shot
