@@ -63,17 +63,10 @@ ActiveRecord::Schema.define(version: 2020_06_01_100737) do
     t.bigint "promotion_id", null: false
     t.string "code"
     t.integer "ip_address"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.boolean "activated", default: false
-    t.index ["promotion_id"], name: "index_codes_on_promotion_id"
-  end
-
-  create_table "emails", force: :cascade do |t|
-    t.string "email"
-    t.boolean "opt_out"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["promotion_id"], name: "index_codes_on_promotion_id"
   end
 
   create_table "nightclubs", force: :cascade do |t|
@@ -97,9 +90,13 @@ ActiveRecord::Schema.define(version: 2020_06_01_100737) do
 
   create_table "opening_hours", force: :cascade do |t|
     t.bigint "nightclub_id", null: false
-    t.integer "day"
-    t.time "closes"
-    t.time "opens"
+    t.boolean "monday", default: false
+    t.boolean "tuesday", default: false
+    t.boolean "wednesday", default: false
+    t.boolean "thursday", default: false
+    t.boolean "friday", default: false
+    t.boolean "saturday", default: false
+    t.boolean "sunday", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["nightclub_id"], name: "index_opening_hours_on_nightclub_id"

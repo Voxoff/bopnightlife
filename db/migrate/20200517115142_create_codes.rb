@@ -4,6 +4,7 @@ class CreateCodes < ActiveRecord::Migration[6.0]
       t.references :promotion, null: false, foreign_key: true
       t.string :code
       t.integer :ip_address
+      t.boolean :activated, default: false
 
       t.timestamps
     end

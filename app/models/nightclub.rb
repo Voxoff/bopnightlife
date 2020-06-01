@@ -1,7 +1,7 @@
 class Nightclub < ApplicationRecord
   belongs_to :address
   has_many :promotions
-  has_many :opening_hours
+  has_one :opening_hour
   has_one_attached :photo
 
   validates_uniqueness_of :name
@@ -26,7 +26,7 @@ class Nightclub < ApplicationRecord
     name.gsub(" ", "-")
   end
 
-  def opening_days_of_week
-    opening_hours.pluck(:day)
+  def open_on_this_day?(num)
+    opening_hour&.day_of_week(num)
   end
 end
