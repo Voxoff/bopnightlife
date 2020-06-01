@@ -1,6 +1,7 @@
 User.destroy_all
 Promotion.destroy_all
 Nightclub.destroy_all
+OpeningHour.destroy_all
 
 hamish = User.create(
   admin: true,

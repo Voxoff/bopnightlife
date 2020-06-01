@@ -17,7 +17,7 @@
         <p>
           <% %W(M T W T F S S).each_with_index do |day, index| %>
             <% string = nightclub.opening_days_of_week.include?(index + 1) ? 'day-of-week-circle' : '' %>
-            <span class=<%= string %>><%= day %></span>
+            <span class="day-of-week <%= string %>"><%= day %></span>
           <% end %>
       </p>
       </div>
