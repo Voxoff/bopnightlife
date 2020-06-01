@@ -7,11 +7,21 @@
     <% end %>
     <div class="nightclub-card-static-info">
       <h2><%= nightclub.name %></h2>
-      <p><%= nightclub.description %></p>
-      <p id="style"><%= "#{nightclub.style}" %></p>
-      <p><%= "Cheapest Lager: £#{nightclub.cheapest_lager} "%></p>
-      <p><%= "Cheapest Shot:  £#{nightclub.cheapest_shot} "%></p>
-      <p><%= "Cheapest Mixer: £#{nightclub.cheapest_mixer} "%></p>
+      <% if nightclub.description %>
+        <p><%= nightclub.description %></p>
+      <% end %>
+      <% if nightclub.style %>
+        <p id="style"><%= "#{nightclub.style}" %></p>
+      <% end %>
+      <% if nightclub.cheapest_lager %>
+        <p><%= "Cheapest Lager: £#{nightclub.cheapest_lager} "%></p>
+      <% end %>
+      <% if nightclub.cheapest_shot %>
+        <p><%= "Cheapest Shot:  £#{nightclub.cheapest_shot} "%></p>
+      <% end %>
+      <% if nightclub.cheapest_mixer %>
+        <p><%= "Cheapest Mixer: £#{nightclub.cheapest_mixer} "%></p>
+      <% end %>
       <p><%= "#{nightclub.present_address}" %></p>
       <div class="opening-hours flex">
         <p>
@@ -32,8 +42,14 @@
       <% if nightclub.recently_updated? %>
         <div class="live-indicator-and-text">
           <div class="live-indicator">
+            <div class="spinner">
+              <div class="rect1"></div>
+              <div class="rect2"></div>
+              <div class="rect3"></div>
+              <div class="rect4"></div>
+              <div class="rect5"></div>
+            </div>
           </div>
-          <p>Just In</p>
         </div>
       <% end %>
     </div>
