@@ -33,6 +33,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_bot'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
