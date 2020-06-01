@@ -20,6 +20,7 @@ gem 'activeadmin'
 gem 'arctic_admin'
 gem 'cloudinary'
 gem 'gibbon'
+gem 'rqrcode'
 
 # Heroku
 gem "sentry-raven"
