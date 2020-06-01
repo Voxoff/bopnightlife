@@ -25,7 +25,14 @@
   }
 }
 
-// @keyframes blink {
-//   from, to { opacity: 1 }
-//   50% { opacity: 0 }
-// }
+.day-of-week-circle {
+  color: $green;
+  width: 1.3em;
+  height: 1.3sem;
+  border: 0.1em solid;
+  line-height: 1em;
+  display: inline-block;
+  border-radius: 50%;
+  text-align: center;
+  border: 0.1em double
+}
