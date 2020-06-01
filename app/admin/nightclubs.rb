@@ -2,16 +2,11 @@ ActiveAdmin.register Nightclub do
   permit_params :name, :total_capacity, :style, :description, :cheapest_lager, :cheapest_mixer, :cheapest_shot, :price_house_wine, :capacity, :queue_time, :entry_price, :gender_mix, :promotion_available, :photo
 
   includes(:address, photo_attachment: :blob)
-  # index do
-  #    selectable_column
-  #   id_column
-  # end
 
   batch_action "Change Queue Times For", form: {
     queue_time: :text
   } do |ids, input|
     batch_action_collection.find(ids).each do |nightclub|
-      # binding.pry
       nightclub.update(queue_time: input["queue_time"])
     end
     redirect_to collection_path, notice: "The queue_time has been changed to #{input["queue_time"]}."
@@ -35,9 +30,9 @@ ActiveAdmin.register Nightclub do
       f.input :cheapest_lager
       f.input :price_house_wine
     end
-    f.inputs "Photo", :multipart => true do
-      f.input :photo, :as => :file, :hint => cl_image_tag(f.object&.photo&.key, width: "100", height: "100"), label: 'Photo (forced into 100x100). Current image:'
-    end
+    # f.inputs "Photo", :multipart => true do
+    #   f.input :photo, :as => :file, :hint => cl_image_tag(f.object&.photo&.key, width: "100", height: "100"), label: 'Photo (forced into 100x100). Current image:'
+    # end
     f.actions
   end
 end
