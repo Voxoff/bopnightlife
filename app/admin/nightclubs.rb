@@ -17,13 +17,14 @@ ActiveAdmin.register Nightclub do
 
   includes(:address)
 
-controller do
-  def update
-    super do |success,failure|
-      success.html { redirect_to collection_path }
+  # Hack that words around redirection to locaalhost in production only
+  controller do
+    def update
+      super do |success,failure|
+        success.html { redirect_to collection_path }
+      end
     end
   end
-end
 
 
   batch_action "Change Queue Times For", form: {
