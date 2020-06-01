@@ -1,8 +1,6 @@
 class OpeningHour < ApplicationRecord
   belongs_to :nightclub
 
-  # validates :day, inclusion: { in: (0..7).to_a }
-
   def is_num_of_week_open
     Date::DAYNAMES.find_index(num)
   end
