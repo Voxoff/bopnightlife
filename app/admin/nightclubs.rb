@@ -1,7 +1,7 @@
 ActiveAdmin.register Nightclub do
-  permit_params :name, :total_capacity, :style, :description, :cheapest_lager, :cheapest_mixer, :cheapest_shot, :price_house_wine, :capacity, :queue_time, :entry_price, :gender_mix, :promotion_available, :photo
+  permit_params :name, :total_capacity, :style, :description, :cheapest_lager, :cheapest_mixer, :cheapest_shot, :price_house_wine, :capacity, :queue_time, :entry_price, :gender_mix, :promotion_available, :photo, :address_id
 
-  includes(:address, photo_attachment: :blob)
+  includes(:address)
 
   batch_action "Change Queue Times For", form: {
     queue_time: :text
@@ -15,13 +15,14 @@ ActiveAdmin.register Nightclub do
   menu priority: 1
 
   form do |f|
-    f.semantic_errors
+    f.semantic_errors *f.object.errors.keys
     f.inputs "Live" do
       f.input :queue_time
       f.input :entry_price
       f.input :gender_mix
       f.input :promotion_available
     end
+    f.inputs :address
     f.inputs "Static" do
       f.input :capacity
       f.input :description

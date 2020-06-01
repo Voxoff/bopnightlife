@@ -4,6 +4,9 @@ class Nightclub < ApplicationRecord
   has_one :opening_hour
   has_one_attached :photo
 
+    accepts_nested_attributes_for :address, reject_if: :all_blank
+
+
   validates_uniqueness_of :name
 
   def gender_mix_string
