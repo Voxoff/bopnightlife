@@ -17,13 +17,13 @@ ActiveAdmin.register Nightclub do
 
   includes(:address)
 
-  controller do
-    def create
-      create! do |format|
-        format.html { redirect_to collection_path } if resource.valid?
-      end
+controller do
+  def update
+    super do |success,failure|
+      success.html { redirect_to collection_path }
     end
   end
+end
 
 
   batch_action "Change Queue Times For", form: {
