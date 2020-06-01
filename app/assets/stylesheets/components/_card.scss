@@ -95,6 +95,10 @@
   .promotions {
     margin-top: 20px;
   }
+
+  .nightclub-card p {
+    text-align: center;
+  }
 }
 
 // xs, sm & md
@@ -109,9 +113,7 @@
     flex-direction: column;
   }
 
-  .nightclub-card p {
-    text-align: center;
-  }
+
 
   .nightclub-card-static-info {
     align-items: inherit;

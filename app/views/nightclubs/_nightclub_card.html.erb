@@ -12,15 +12,15 @@
       <p><%= "Cheapest Lager: £#{nightclub.cheapest_lager} "%></p>
       <p><%= "Cheapest Shot:  £#{nightclub.cheapest_shot} "%></p>
       <p><%= "Cheapest Mixer: £#{nightclub.cheapest_mixer} "%></p>
-      <p><%= "Address: #{nightclub.present_address}" %></p>
+      <p><%= "#{nightclub.present_address}" %></p>
     </div>
     <div class="partial-border">
     </div>
   </div>
   <div class="nightclub-card-live">
     <div class="live">
-      <p>Queue time: <%= nightclub.queue_time_string %></p>
-      <p>Gender Mix: <%= nightclub.gender_mix_string %></p>
+      <p><span style="font-weight:lighter">Queue time: </span><%= nightclub.queue_time_string %></p>
+      <p><span style="font-weight:lighter">Gender Mix: </span><%= nightclub.gender_mix_string %></p>
       <% if nightclub.recently_updated? %>
         <div class="live-indicator-and-text">
           <div class="live-indicator">
