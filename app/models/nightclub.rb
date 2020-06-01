@@ -2,11 +2,13 @@ class Nightclub < ApplicationRecord
   belongs_to :address
   has_many :promotions
   has_one :opening_hour
+
   has_one_attached :photo
 
-    accepts_nested_attributes_for :address, reject_if: :all_blank
+  accepts_nested_attributes_for :address, reject_if: :all_blank
 
 
+  validates :name, :description, presence: true
   validates_uniqueness_of :name
 
   def gender_mix_string
@@ -26,7 +28,7 @@ class Nightclub < ApplicationRecord
   end
 
   def name_as_html_id
-    name.gsub(" ", "-")
+    name&.gsub(" ", "-")
   end
 
   def open_on_this_day?(num)
