@@ -13,7 +13,9 @@ ActiveAdmin.register Nightclub do
                :gender_mix,
                :promotion_available,
                :photo,
-               address_attributes: [:first_line, :second_line, :city, :postcode]
+               address_attributes: [:first_line, :second_line, :city, :postcode],
+               promotions_attributes: [:description, :nightclub_id, :active],
+               opening_hour_attributes: [:nightclub_id, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
 
   includes(:address)
 
@@ -57,6 +59,17 @@ ActiveAdmin.register Nightclub do
       promotions.inputs "Promotion" do
         promotions.input :description
         promotions.input :active
+      end
+    end
+    f.has_many :opening_hour do |opening_hour|
+      opening_hour.inputs "Opening hour" do
+        opening_hour.input :monday
+        opening_hour.input :tuesday
+        opening_hour.input :wednesday
+        opening_hour.input :thursday
+        opening_hour.input :friday
+        opening_hour.input :saturday
+        opening_hour.input :sunday
       end
     end
     f.inputs "Static" do
