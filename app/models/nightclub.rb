@@ -1,7 +1,7 @@
 class Nightclub < ApplicationRecord
   has_one :address, dependent: :destroy, required: true
   has_many :promotions, dependent: :destroy
-  has_one :opening_hour, dependent: :destroy
+  has_one :opening_hour, dependent: :destroy, required: true
 
   has_one_attached :photo
 
