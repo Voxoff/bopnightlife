@@ -73,7 +73,7 @@ bergain = Nightclub.create(
 
 file = File.open("#{Rails.root.join('app', 'assets', 'images', 'berghain.png')}")
 bergain.photo.attach(io:file, filename: 'b_logo.jpg', content_type: 'image/jpg')
-bongo.opening_hours.build(saturday: true, sunday: true)
+bongo.build_opening_hour.build(saturday: true, sunday: true)
 
 
 Promotion.create(
