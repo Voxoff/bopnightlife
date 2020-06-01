@@ -1,6 +1,7 @@
 class Nightclub < ApplicationRecord
   belongs_to :address
   has_many :promotions
+  has_many :opening_hours
   has_one_attached :photo
 
   validates_uniqueness_of :name
@@ -23,5 +24,9 @@ class Nightclub < ApplicationRecord
 
   def name_as_html_id
     name.gsub(" ", "-")
+  end
+
+  def opening_days_of_week
+    opening_hours.pluck(:day)
   end
 end

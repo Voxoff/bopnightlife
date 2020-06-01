@@ -13,6 +13,14 @@
       <p><%= "Cheapest Shot:  £#{nightclub.cheapest_shot} "%></p>
       <p><%= "Cheapest Mixer: £#{nightclub.cheapest_mixer} "%></p>
       <p><%= "#{nightclub.present_address}" %></p>
+      <div class="opening-hours flex">
+        <p>
+          <% %W(M T W T F S S).each_with_index do |day, index| %>
+            <% string = nightclub.opening_days_of_week.include?(index + 1) ? 'day-of-week-circle' : '' %>
+            <span class=<%= string %>><%= day %></span>
+          <% end %>
+      </p>
+      </div>
     </div>
     <div class="partial-border">
     </div>

@@ -26,6 +26,9 @@ pete = Nightclub.create(
 
 file = File.open("#{Rails.root.join('app', 'assets', 'images', 'sneaky_pete.png')}")
 pete.photo.attach(io:file, filename: 'sneakylogo.png', content_type: 'image/png')
+[1,3,5,6,7].each do |day|
+  pete.opening_hours.build(day: day).save
+end
 
 bongo = Nightclub.create(
   name: "The Bongo Club",
@@ -45,6 +48,7 @@ bongo = Nightclub.create(
 
 file = File.open("#{Rails.root.join('app', 'assets', 'images', 'bongo.jpg')}")
 bongo.photo.attach(io:file, filename: 'bongo_logo.png', content_type: 'image/png')
+bongo.opening_hours.build([{day: 6}, {day: 7}]) {|x| x.save}
 
 bergain = Nightclub.create(
   name: "Berghain",
@@ -63,6 +67,10 @@ bergain = Nightclub.create(
 
 file = File.open("#{Rails.root.join('app', 'assets', 'images', 'berghain.png')}")
 bergain.photo.attach(io:file, filename: 'b_logo.jpg', content_type: 'image/jpg')
+
+[1,2,3,4,5,6,7].each do |day|
+  bergain.opening_hours.build(day: day).save
+end
 
 Promotion.create(
   active: true,

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_201911) do
+ActiveRecord::Schema.define(version: 2020_06_01_100737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -95,6 +95,16 @@ ActiveRecord::Schema.define(version: 2020_05_28_201911) do
     t.index ["address_id"], name: "index_nightclubs_on_address_id"
   end
 
+  create_table "opening_hours", force: :cascade do |t|
+    t.bigint "nightclub_id", null: false
+    t.integer "day"
+    t.time "closes"
+    t.time "opens"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["nightclub_id"], name: "index_opening_hours_on_nightclub_id"
+  end
+
   create_table "promotions", force: :cascade do |t|
     t.bigint "nightclub_id", null: false
     t.boolean "active", default: false
@@ -120,5 +130,6 @@ ActiveRecord::Schema.define(version: 2020_05_28_201911) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "codes", "promotions"
   add_foreign_key "nightclubs", "addresses"
+  add_foreign_key "opening_hours", "nightclubs"
   add_foreign_key "promotions", "nightclubs"
 end
