@@ -17,6 +17,15 @@ ActiveAdmin.register Nightclub do
 
   includes(:address)
 
+  controller do
+    def create
+      create! do |format|
+        format.html { redirect_to collection_path } if resource.valid?
+      end
+    end
+  end
+
+
   batch_action "Change Queue Times For", form: {
     queue_time: :text
   } do |ids, input|
