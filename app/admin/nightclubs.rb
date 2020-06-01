@@ -1,5 +1,19 @@
 ActiveAdmin.register Nightclub do
-  permit_params :name, :total_capacity, :style, :description, :cheapest_lager, :cheapest_mixer, :cheapest_shot, :price_house_wine, :capacity, :queue_time, :entry_price, :gender_mix, :promotion_available, :photo, :address_id
+  permit_params :name,
+               :total_capacity,
+               :style,
+               :description,
+               :cheapest_lager,
+               :cheapest_mixer,
+               :cheapest_shot,
+               :price_house_wine,
+               :capacity,
+               :queue_time,
+               :entry_price,
+               :gender_mix,
+               :promotion_available,
+               :photo,
+               address_attributes: [:first_line, :second_line, :city, :postcode]
 
   includes(:address)
 
@@ -21,7 +35,20 @@ ActiveAdmin.register Nightclub do
       f.input :entry_price
       f.input :gender_mix
     end
-    f.inputs :address
+    f.has_many :address do |address|
+      address.inputs "Address" do
+        address.input :first_line
+        address.input :second_line
+        address.input :city
+        address.input :postcode
+      end
+    end
+    f.has_many :promotions do |promotions|
+      promotions.inputs "Promotion" do
+        promotions.input :description
+        promotions.input :active
+      end
+    end
     f.inputs "Static" do
       f.input :name
       f.input :style

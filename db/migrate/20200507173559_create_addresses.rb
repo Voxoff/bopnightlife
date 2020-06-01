@@ -5,6 +5,7 @@ class CreateAddresses < ActiveRecord::Migration[6.0]
       t.string :second_line
       t.string :city
       t.string :postcode
+      t.references :nightclub, null: false, foreign_key: true
 
       t.timestamps
     end

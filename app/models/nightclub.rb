@@ -1,11 +1,12 @@
 class Nightclub < ApplicationRecord
-  belongs_to :address
+  has_one :address, dependent: :destroy, required: true
   has_many :promotions
   has_one :opening_hour
 
   has_one_attached :photo
 
   accepts_nested_attributes_for :address, reject_if: :all_blank
+  accepts_nested_attributes_for :promotions
 
 
   validates :name, :description, presence: true

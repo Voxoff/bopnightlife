@@ -55,8 +55,10 @@ ActiveRecord::Schema.define(version: 2020_06_01_100737) do
     t.string "second_line"
     t.string "city"
     t.string "postcode"
+    t.bigint "nightclub_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["nightclub_id"], name: "index_addresses_on_nightclub_id"
   end
 
   create_table "codes", force: :cascade do |t|
@@ -82,10 +84,8 @@ ActiveRecord::Schema.define(version: 2020_06_01_100737) do
     t.integer "entry_price"
     t.integer "gender_mix"
     t.boolean "promotion_available"
-    t.bigint "address_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["address_id"], name: "index_nightclubs_on_address_id"
   end
 
   create_table "opening_hours", force: :cascade do |t|
@@ -125,8 +125,8 @@ ActiveRecord::Schema.define(version: 2020_06_01_100737) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "nightclubs"
   add_foreign_key "codes", "promotions"
-  add_foreign_key "nightclubs", "addresses"
   add_foreign_key "opening_hours", "nightclubs"
   add_foreign_key "promotions", "nightclubs"
 end

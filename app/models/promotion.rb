@@ -3,4 +3,6 @@ class Promotion < ApplicationRecord
   has_many :codes
 
   scope :active, -> { where(active: true)}
+
+  validates :description, presence: :true
 end

@@ -13,7 +13,6 @@ class CreateNightclubs < ActiveRecord::Migration[6.0]
       t.integer :entry_price
       t.integer :gender_mix
       t.boolean :promotion_available
-      t.references :address, null: false, foreign_key: true
 
       t.timestamps
     end
