@@ -1,11 +1,7 @@
-.live-indicator-and-text {
-  position: absolute;
-  top: -16px;
-  right: -60px;
-  color: red;
-  display: flex;
-}
 .spinner {
+  position: absolute;
+  top: -31px;
+  right: -90px;
   width: 50px;
   height: 40px;
   text-align: center;
@@ -44,7 +40,7 @@
 
 @-webkit-keyframes sk-stretchdelay {
   0%, 40%, 100% { -webkit-transform: scaleY(0.4) }
-  20% { -webkit-transform: scaleY(1.0) }
+  20% { -webkit-transform: scaleY(0.8) }
 }
 
 @keyframes sk-stretchdelay {
@@ -52,22 +48,7 @@
     transform: scaleY(0.4);
     -webkit-transform: scaleY(0.4);
   }  20% {
-    transform: scaleY(1.0);
-    -webkit-transform: scaleY(1.0);
+    transform: scaleY(0.8);
+    -webkit-transform: scaleY(0.8);
   }
 }
-
-.day-of-week-circle {
-  color: $green;
-  width: 20px;
-  height: 20px;
-  border: 0.1em solid;
-  line-height: 16px;
-  display: inline-block;
-  border-radius: 50%;
-  text-align: center;
-  border: 0.1em double
-}
- .day-of-week {
-  padding: 0px 2px;
- }

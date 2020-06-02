@@ -30,7 +30,7 @@
             <% string = nightclub.open_on_this_day?(index) ? 'day-of-week-circle' : '' %>
             <span class="day-of-week <%= string %>"><%= day %></span>
           <% end %>
-      </p>
+        </p>
       </div>
     </div>
     <div class="partial-border">
@@ -38,21 +38,16 @@
   </div>
   <div class="nightclub-card-live">
     <div class="live">
-      <p><span style="font-weight:lighter">Queue time: </span><%= nightclub.queue_time_string %></p>
-      <p><span style="font-weight:lighter">Gender Mix: </span><%= nightclub.gender_mix_string %></p>
-      <% if nightclub.recently_updated? %>
-        <div class="live-indicator-and-text">
-          <div class="live-indicator">
-            <div class="spinner">
-              <div class="rect1"></div>
-              <div class="rect2"></div>
-              <div class="rect3"></div>
-              <div class="rect4"></div>
-              <div class="rect5"></div>
-            </div>
-          </div>
-        </div>
+      <%# if nightclub.queue_time %>
+        <p><span style="font-weight:lighter">Queue time: </span><%= nightclub.queue_time_string %></p>
+      <%# end %>
+      <% if nightclub.gender_mix %>
+        <p><span style="font-weight:lighter">Gender Mix: </span><%= nightclub.gender_mix_string %></p>
       <% end %>
+      <% if nightclub.capacity_percentage %>
+        <p><span style="font-weight:lighter">Gender Mix: </span><%= nightclub.capacity_percentage_string %></p>
+      <% end %>
+      <%= render "spinner" if nightclub.recently_updated? %>
     </div>
     <div class="promotions">
       <% if nightclub.promotions.active.any? %>

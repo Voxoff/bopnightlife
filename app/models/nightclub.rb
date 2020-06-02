@@ -13,12 +13,16 @@ class Nightclub < ApplicationRecord
   validates :name, :description, presence: true
   validates_uniqueness_of :name
 
-  def gender_mix_string
-    self.gender_mix || "Hold tight..."
+  def queue_time_string
+    queue_time ? queue_time.to_s + " mins" : "Data coming soon..."
   end
 
-  def queue_time_string
-    queue_time ? queue_time.to_s + " mins" : "Hold tight..."
+  def gender_mix_string
+    self.gender_mix.to_s + "%"
+  end
+
+  def current_capacity_string
+    self.current_capacity.to_s + "%"
   end
 
   def recently_updated?
