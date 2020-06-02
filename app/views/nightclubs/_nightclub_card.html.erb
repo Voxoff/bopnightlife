@@ -6,46 +6,19 @@
       <%= image_tag "logo.png", alt: "No image yet" %>
     <% end %>
     <div class="nightclub-card-static-info">
-      <h2><%= nightclub.name %></h2>
-      <% if nightclub.description %>
-        <p><%= nightclub.description %></p>
-      <% end %>
-      <p><%= "#{nightclub.present_address}" %></p>
-      <% if nightclub.style %>
-        <p id="style"><%= "#{nightclub.style}" %></p>
-      <% end %>
-      <% if nightclub.cheapest_lager %>
-        <p><%= "Cheapest Lager: £#{nightclub.cheapest_lager} "%></p>
-      <% end %>
-      <% if nightclub.cheapest_shot %>
-        <p><%= "Cheapest Shot:  £#{nightclub.cheapest_shot} "%></p>
-      <% end %>
-      <% if nightclub.cheapest_mixer %>
-        <p><%= "Cheapest Mixer: £#{nightclub.cheapest_mixer} "%></p>
-      <% end %>
-      <p><%= "#{nightclub.present_address}" %></p>
-      <div class="opening-hours flex">
-        <p>
-          <% %W(M T W T F S S).each_with_index do |day, index| %>
-            <% string = nightclub.open_on_this_day?(index) ? 'day-of-week-circle' : '' %>
-            <span class="day-of-week <%= string %>"><%= day %></span>
-          <% end %>
-        </p>
-      </div>
+      <%= render "nightclub_static_data", nightclub: nightclub %>
     </div>
     <div class="partial-border">
     </div>
   </div>
   <div class="nightclub-card-live">
     <div class="live">
-      <%# if nightclub.queue_time %>
-        <p><span style="font-weight:lighter">Queue time: </span><%= nightclub.queue_time_string %></p>
-      <%# end %>
+      <p class="live-text"><span class="live-text-span">Queue time: </span><%= nightclub.queue_time_string %></p>
       <% if nightclub.gender_mix %>
-        <p><span style="font-weight:lighter">Gender Mix: </span><%= nightclub.gender_mix_string %></p>
+        <p class="live-text"><span class="live-text-span">Gender Mix: </span><%= nightclub.gender_mix_string %></p>
       <% end %>
       <% if nightclub.capacity_percentage %>
-        <p><span style="font-weight:lighter">Gender Mix: </span><%= nightclub.capacity_percentage_string %></p>
+        <p class="live-text"><span class="live-text-span">Gender Mix: </span><%= nightclub.capacity_percentage_string %></p>
       <% end %>
       <%= render "spinner" if nightclub.recently_updated? %>
     </div>

@@ -22,13 +22,15 @@
         </div>
       <% else %>
           <div class="d-flex d-sm-none flex-column">
-            <% if params[:action] == 'index' && params[:controller] == 'nightclubs' %>
               <ul class="list-group list-group-flush">
+            <% if params[:action] == 'index' && params[:controller] == 'nightclubs' %>
               <% @nightclubs.each do |nightclub| %>
                  <li class="list-group-item"><a href=<%= "##{nightclub.name_as_html_id}" %>> <%= nightclub.name %></a></li>
               <% end %>
-              </ul>
+            <% else %>
+              <li class="list-group-item"><%= link_to "Home", root_path %></li>
             <% end %>
+              </ul>
           </div>
       <% end %>
   </div>

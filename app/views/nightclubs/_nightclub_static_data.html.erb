@@ -1,0 +1,26 @@
+<h2><%= nightclub.name %></h2>
+<% if nightclub.description %>
+  <p><%= nightclub.description %></p>
+<% end %>
+<p><%= "#{nightclub.present_address}" %></p>
+<% if nightclub.style %>
+  <p id="style"><%= "#{nightclub.style}" %></p>
+<% end %>
+<% if nightclub.cheapest_lager %>
+  <p><%= "Cheapest Lager: £#{nightclub.cheapest_lager} "%></p>
+<% end %>
+<% if nightclub.cheapest_shot %>
+  <p><%= "Cheapest Shot:  £#{nightclub.cheapest_shot} "%></p>
+<% end %>
+<% if nightclub.cheapest_mixer %>
+  <p><%= "Cheapest Mixer: £#{nightclub.cheapest_mixer} "%></p>
+<% end %>
+<p><%= "#{nightclub.present_address}" %></p>
+<div class="opening-hours flex">
+  <p>
+    <% %W(M T W T F S S).each_with_index do |day, index| %>
+      <% string = nightclub.open_on_this_day?(index) ? 'day-of-week-circle' : '' %>
+      <span class="day-of-week <%= string %>"><%= day %></span>
+    <% end %>
+  </p>
+</div>
