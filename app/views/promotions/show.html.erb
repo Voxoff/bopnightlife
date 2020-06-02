@@ -1,9 +1,19 @@
 <div class="container">
   <div class="d-flex justify-content-center text-center mt-4">
-  <h2>Quote <%= @code.code %> to a member of the team at the door</h2>
+    <h2>Quote <%= @code.code %> to a member of the team at the door</h2>
   </div>
 
   <div class="d-flex justify-content-center m-5">
     <%= @svg.html_safe %>
-</div>
+  </div>
+  <div class="d-flex justify-content-center m-5 flex-column align-items-center">
+    <div class="d-flex">
+      <i class="far fa-circle bulletpoint"></i>
+      <p>Bop member of staff wearing green coat and hat.</p>
+    </div>
+    <div class="d-flex">
+      <i class="far fa-circle bulletpoint"></i>
+      <p>Code is unique and can only be redeemed once</p>
+    </div>
+  </div>
 </div>
