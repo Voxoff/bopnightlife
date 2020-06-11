@@ -4,7 +4,6 @@ class Address < ApplicationRecord
   belongs_to :nightclub
 
   def to_s
-    "#{self.first_line}, #{self.city}, #{self.postcode}"
+    "#{self.first_line}, #{self.postcode}"
   end
-
 end

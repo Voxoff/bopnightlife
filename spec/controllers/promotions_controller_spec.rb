@@ -8,7 +8,6 @@ RSpec.describe PromotionsController, type: :controller do
   end
 
   it 'works' do
-    binding.pry
     subject
     expect(response).to be true
   end

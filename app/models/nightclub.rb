@@ -29,7 +29,7 @@ class Nightclub < ApplicationRecord
   end
 
   def live_data?
-    queue_time || gender_mix || capacity_percentage
+    !!(queue_time || gender_mix || capacity_percentage)
   end
 
   def recently_updated?
@@ -41,7 +41,7 @@ class Nightclub < ApplicationRecord
   end
 
   def name_as_html_id
-    name&.gsub(" ", "-")
+    name.gsub(" ", "-")
   end
 
   def open_on_this_day?(num)

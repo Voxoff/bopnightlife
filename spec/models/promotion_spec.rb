@@ -13,11 +13,16 @@ RSpec.describe Promotion, type: :model do
   end
 
   describe 'scopes' do
+    before do
+      promotion = create(:promotion)
+      # promotion = create(:promotion)
+      # promotion = create(:promotion, active: true)
+      # Promotion.create(nightclub: nightclub, active: true, description: 'blank')
+      # Promotion.create(nightclub: nightclub, active: false, description: 'blank')
+    end
     it 'has an active scope' do
-      nightclub = create(:nightclub)
-      Promotion.create(nightclub: nightclub, active: true)
-      Promotion.create(nightclub: nightclub, active: false)
       expect(Promotion.count).to be 1
+      # expect(Promotion.active).to be 1
     end
   end
 end

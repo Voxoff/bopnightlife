@@ -1,7 +1,14 @@
 FactoryBot.define do
   factory :nightclub do
-    name { "Berhain" }
+    transient do
+      queue_time { 10 }
+    end
+    name { "The Berghain" }
     description  { "Epic" }
-    address { build(:address) }
+    after(:build) do |nightclub|
+      nightclub.address ||= FactoryBot.build(:address, nightclub, nightclub)
+    end
+    # address { build(:address,  nightclub: nightclub) }
+    opening_hour { build(:opening_hour) }
   end
 end
