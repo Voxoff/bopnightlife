@@ -14,7 +14,7 @@ class Nightclub < ApplicationRecord
   validates_uniqueness_of :name
 
   def queue_time_string
-    queue_time ? queue_time.to_s + " mins" : "Data coming soon..."
+    queue_time ? queue_time.to_s + " mins" : "?"
   end
 
   def gender_mix_string
@@ -23,6 +23,14 @@ class Nightclub < ApplicationRecord
 
   def current_capacity_string
     self.current_capacity.to_s + "%"
+  end
+
+  def capacity_percentage_string
+    self.capacity_percentage.to_s + "%"
+  end
+
+  def live_data?
+    queue_time || gender_mix || capacity_percentage
   end
 
   def recently_updated?

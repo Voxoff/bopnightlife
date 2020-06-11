@@ -12,13 +12,26 @@
     </div>
   </div>
   <div class="nightclub-card-live">
-    <div class="live">
-      <p class="live-text"><span class="live-text-span">Queue time: </span><%= nightclub.queue_time_string %></p>
+    <div class="live d-flex">
+      <% unless nightclub.live_data? %>
+        <div class="d-flex flex-column justify-content-end">
+          <p style="font-style: italic; font-weight: lighter; margin-bottom: 0px;">No data yet</p>
+        </div>
+      <% end %>
+      <% if nightclub.queue_time %>
+        <div class="square">
+          <%= nightclub.queue_time_string %><span class="live-text-span">Queue time</span>
+        </div>
+      <% end %>
       <% if nightclub.gender_mix %>
-        <p class="live-text"><span class="live-text-span">Gender Mix: </span><%= nightclub.gender_mix_string %></p>
+        <div class="square">
+          <%= nightclub.gender_mix_string %><span class="live-text-span">Gender Mix</span>
+        </div>
       <% end %>
       <% if nightclub.capacity_percentage %>
-        <p class="live-text"><span class="live-text-span">Gender Mix: </span><%= nightclub.capacity_percentage_string %></p>
+        <div class="square">
+          <%= nightclub.capacity_percentage_string %><span class="live-text-span">Capacity</span>
+        </div>
       <% end %>
       <%= render "spinner" if nightclub.recently_updated? %>
     </div>
@@ -30,7 +43,7 @@
           <% end %>
         <% end %>
       <% else %>
-        <p style="font-style: italic; font-weight: lighter;">No promos yet</p>
+        <p style="font-style: italic; font-weight: lighter; margin-bottom: 0px;">No promos yet</p>
       <% end %>
     </div>
   </div>

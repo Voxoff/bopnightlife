@@ -21,4 +21,21 @@
 
 .live-text-span {
   font-weight: 300;
+  position: absolute;
+  bottom: 0px;
+  right:5px;
+  font-size: 14px;
+}
+
+.square {
+  padding: 1.2rem 1rem;
+  width: 120px;
+  text-align: center;
+  margin: 2px;
+  font-size: 1.5rem;
+  position: relative;
+  cursor: auto;
+  color: #212529;
+  background-color: #6dd18c;
+  border-color: #6dd18c;
 }

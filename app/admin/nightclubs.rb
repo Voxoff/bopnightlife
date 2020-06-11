@@ -13,9 +13,10 @@ ActiveAdmin.register Nightclub do
                :gender_mix,
                :promotion_available,
                :photo,
-               address_attributes: [:first_line, :second_line, :city, :postcode],
-               promotions_attributes: [:description, :nightclub_id, :active],
-               opening_hour_attributes: [:nightclub_id, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday]
+               :capacity_percentage,
+               address_attributes: [:first_line, :second_line, :city, :postcode, :id],
+               promotions_attributes: [:description, :nightclub_id, :active, :id],
+               opening_hour_attributes: [:nightclub_id, :monday, :tuesday, :wednesday, :thursday, :friday, :saturday, :sunday, :id]
 
   includes(:address)
 
@@ -46,6 +47,7 @@ ActiveAdmin.register Nightclub do
       f.input :queue_time
       f.input :entry_price
       f.input :gender_mix
+      f.input :capacity_percentage
     end
     f.has_many :address do |address|
       address.inputs "Address" do

@@ -1,7 +1,7 @@
 .spinner {
   position: absolute;
-  top: -31px;
-  right: -90px;
+  top: -25px;
+  right: -70px;
   width: 50px;
   height: 40px;
   text-align: center;
@@ -50,5 +50,11 @@
   }  20% {
     transform: scaleY(0.8);
     -webkit-transform: scaleY(0.8);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .spinner{
+    right: 0px !important;
   }
 }

@@ -65,6 +65,7 @@
 .promotions {
   display:flex;
   flex-direction: column;
+  justify-content: flex-end;
 
   .btn {
     margin: 2px;
