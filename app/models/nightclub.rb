@@ -9,7 +9,6 @@ class Nightclub < ApplicationRecord
   accepts_nested_attributes_for :promotions
   accepts_nested_attributes_for :opening_hour
 
-
   validates :name, :description, presence: true
   validates_uniqueness_of :name
 

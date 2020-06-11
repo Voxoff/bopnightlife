@@ -63,10 +63,6 @@
 }
 
 .promotions {
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-end;
-
   .btn {
     margin: 2px;
   }
@@ -86,10 +82,6 @@
   .nightclub-card-live{
     flex-direction:column;
     height: 100%;
-  }
-
-  .live-indicator-and-text {
-    right: -5px !important;
   }
 
   .promotions {
@@ -112,8 +104,6 @@
     height: 100%;
     flex-direction: column;
   }
-
-
 
   .nightclub-card-static-info {
     align-items: inherit;

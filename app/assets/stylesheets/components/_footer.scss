@@ -25,11 +25,11 @@ footer {
   color: white;
   opacity: .8;
   transition: all 0.3s;
-}
 
-.footer-link:hover {
-  opacity: 1;
-  color: white;
+  &:hover {
+    opacity: 1;
+    color: white;
+  }
 }
 
 .copyright{

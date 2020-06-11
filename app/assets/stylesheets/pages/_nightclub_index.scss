@@ -9,15 +9,10 @@
   text-align: center;
   border: 0.1em double
 }
+
  .day-of-week {
   padding: 0px 2px;
  }
-
-.live-text {
-  font-weight: 900;
-  color: #000;
-  text-transform: uppercase;
-}
 
 .live-text-span {
   font-weight: 300;
@@ -27,15 +22,8 @@
   font-size: 14px;
 }
 
-.square {
-  padding: 1.2rem 1rem;
-  width: 120px;
-  text-align: center;
-  margin: 2px;
-  font-size: 1.5rem;
-  position: relative;
-  cursor: auto;
-  color: #212529;
-  background-color: #6dd18c;
-  border-color: #6dd18c;
+.no-data {
+  font-style: italic;
+  font-weight: lighter;
+  margin-bottom: 0px;
 }
