@@ -15,7 +15,6 @@
 <% if nightclub.cheapest_mixer %>
   <p><%= "Cheapest Mixer: £#{nightclub.cheapest_mixer} "%></p>
 <% end %>
-<p><%= "#{nightclub.present_address}" %></p>
 <div class="opening-hours flex">
   <p>
     <% %W(M T W T F S S).each_with_index do |day, index| %>
