@@ -6,7 +6,7 @@ RSpec.describe "Promotions", type: :request do
 
   end
 
-  describe "GET /index" do
+  xdescribe "GET /index" do
       let(:nightclub) { Nightclub.create(name: 'test')}
       let(:promotion) { Promotion.create(nightclub: nightclub) }
     # before do

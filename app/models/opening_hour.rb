@@ -1,10 +1,6 @@
 class OpeningHour < ApplicationRecord
   belongs_to :nightclub
 
-  def is_num_of_week_open
-    Date::DAYNAMES.find_index(num)
-  end
-
   def day_of_week(num)
     case num
     when 0 then monday

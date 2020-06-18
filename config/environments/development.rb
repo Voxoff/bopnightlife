@@ -10,7 +10,6 @@ Rails.application.configure do
     Bullet.skip_html_injection = false
   end
 
-
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
