@@ -33,6 +33,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
   gem 'timecop'
   gem 'simplecov'
   gem 'factory_bot_rails'
