@@ -78,9 +78,20 @@ RSpec.describe Nightclub, type: :model do
   end
 
   describe '#open_on_this_day?' do
-    it '' do
+    context 'when the Nightclub is open' do
+      it 'returns true' do
+        expect(subject.open_on_this_day?(0)).to be true
+      end
+    end
 
+    xcontext 'when the Nightclub is closed' do
+      before do
+
+      end
+      # subject { build(:nightclub, params, opening_hour: create(:opening_hour)) }
+      it 'returns true' do
+        expect(subject.open_on_this_day?(0)).to be false
+      end
     end
   end
-
 end
