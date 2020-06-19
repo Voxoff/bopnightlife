@@ -67,6 +67,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
+    addressable (2.7.0)
+      public_suffix (>= 2.0.2, < 5.0)
     arbre (1.2.1)
       activesupport (>= 3.0.0)
     arctic_admin (3.2.0)
@@ -91,6 +93,8 @@ GEM
       rest-client
     coderay (1.1.2)
     concurrent-ruby (1.1.6)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.6)
     devise (4.7.1)
       bcrypt (~> 3.0)
@@ -129,6 +133,7 @@ GEM
     has_scope (0.7.2)
       actionpack (>= 4.1)
       activesupport (>= 4.1)
+    hashdiff (0.3.2)
     http-accept (1.7.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
@@ -195,6 +200,7 @@ GEM
       pry (~> 0.13.0)
     pry-rails (0.3.9)
       pry (>= 0.10.4)
+    public_suffix (4.0.5)
     puma (4.3.3)
       nio4r (~> 2.0)
     rack (2.2.2)
@@ -271,6 +277,7 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.3)
+    safe_yaml (1.0.4)
     sassc (2.3.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -319,6 +326,10 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
+    webmock (2.3.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     webpacker (5.1.1)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
@@ -365,6 +376,7 @@ DEPENDENCIES
   timecop
   uglifier
   web-console (>= 3.3.0)
+  webmock
   webpacker
 
 RUBY VERSION
